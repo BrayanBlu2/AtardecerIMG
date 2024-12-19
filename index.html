@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciudades del Mundo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Mis mejores atardeceres</h1>
+
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+    table{
+      border-collapse: collapse; /*Para que no se repitan los bordes*/
+      border: 1px solid rgb(0, 0, 0);
+      background-color: azure;
+      box-shadow: 0 10px 10px rgb(0, 0, 0);
+      color: rgb(0, 0, 0);
+      margin-bottom: 15px;
+      min-width: 900px;
+      td{
+        border: 1px solid rgb(0, 0, 0);
+        min-width:150px;
+      }
+    }
+
+    #datos{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    @media only screen and (max-width: 900px) {  
+      table{
+        min-width: 100px;;
+        min-height: auto;      
+        
+      td{
+        min-width: 150px;
+        height: auto;
+      }
+
+      }
+
+      img{
+        height: 150px;
+        width: 150px;
+      }
+
+      video{
+        height: 150px;
+        width: 150px;
+      }
+      
+    }
+
+
+    @media only screen and (max-width: 700px) {  
+      table{
+        min-width: 100px;
+        min-height: auto;  
+        
+        td{
+        min-width: 80px;
+        height: auto;
+      }
+
+      }
+
+      img{
+        height: 90px;
+        width: 90px;
+      }
+
+      video{
+        height: 90px;
+        width: 90px;
+      }
+      
+    }
+    
+  </style>
+
+
+
+
+  <div id="app">
+    <h1>Lista de Ciudades</h1>
+    <ul>
+      <li v-for="ciudad in paginatedCities" :key="ciudad.id">
+        <img :src="ciudad.imagen" :alt="ciudad.ciudad" width="100" height="100" />
+        <div>
+          <strong>{{ ciudad.ciudad }}</strong> ({{ ciudad.habitantes.toLocaleString() }} habitantes)
+          <br>
+          {{ ciudad.pais }}, {{ ciudad.continente }}
+        </div>
+      </li>
+    </ul>
+    <div class="pagination">
+      <button @click="prevPage" :disabled="currentPage === 1">Anterior</button>
+      <span>Página {{ currentPage }} de {{ totalPages }}</span>
+      <button @click="nextPage" :disabled="currentPage === totalPages">Siguiente</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="vistas.js"></script>
+
+
+
+
+</body>
+</html>
