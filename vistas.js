@@ -40,7 +40,7 @@ createApp({
   data() {
     return {
       vistas: [
-        { id: 1, Nombre: "Amanecer morado", Puntos: 10, Localidad: "Donosti" , imagen: "img/AmanecerMorado1.webp", video: "img/control.mp4"},
+        { id: 1, Nombre: "Amanecer morado", Puntos: 10, Localidad: "Donosti" , imagen: "img/AmanecerMorado2.webp", video: "img/control.mp4"},
         { id: 2, Nombre: "Atardecer destello", Puntos: 8, Localidad: "Donosti", imagen: "img/AtardecerDestello1.webp", video: "img/control.mp4" },
         { id: 3, Nombre: "Atardecer destello mar", Puntos: 9, Localidad: "Donosti", imagen: "img/AtardecerDestelloMar1.webp", video: "img/control.mp4" },
         { id: 4, Nombre: "Atardecer rojo", Puntos: 9, Localidad: "Donosti", imagen: "img/AtardecerRojo1.webp", video: "img/control.mp4" },
